@@ -3,8 +3,8 @@
   import AutoScrollGallery from './AutoScrollGallery.jsx';
   import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react';
 
-  const clientId = "c7d69233368e4745b7032ab8837ae6d4";
-  const redirectUri = "https://collalbum.guessmybuild.com/";
+  const clientId = "b04b6b4b9fa34eb0bfb1f7722e39b46c";
+  const redirectUri = "http://localhost:3000/";
 
   let hasRunRef = false;
 
@@ -151,6 +151,7 @@
         },
         body: JSON.stringify(response_object)
       })
+
       const data2 = await response2.json()
       
       setCollageContent(<img id="collage-image" src={data2.image_address} />); 

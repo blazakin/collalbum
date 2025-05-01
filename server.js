@@ -3,7 +3,7 @@ import express from 'express';
 import path from 'path';
 import fs from "fs";
 const app = express();
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 3000;
 import { fileURLToPath } from 'url';
 import axios from "axios";
 import { v4 as uuidv4 } from 'uuid';
@@ -35,7 +35,7 @@ app.post("/generateImage", (req, res) => {
 
             writer.on('finish', () => {
                 console.log('Image downloaded and saved successfully!');
-                res.json({image_address: "https://collalbum.guessmybuild.com/images/"+id+".jpg"})
+                res.json({image_address: "http://localhost:3000/images/"+id+".jpg"})
             });
         })
     }

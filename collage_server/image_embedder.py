@@ -20,7 +20,7 @@ REDUCED_IMAGE_SIZE = (64, 64) # Used for semantic embeddings
 
 load_dotenv()
 
-# Initialize Groq and Google settings
+# Initialize Groq and Google api settings
 groq_client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 PROJECT_ID = os.getenv("PROJECT_ID")
 LOCATION = os.getenv("LOCATION")
@@ -54,6 +54,7 @@ def image_url_to_description(image_url: str) -> str:
 
     except Exception as e:
         raise RuntimeError(f"Failed to download/encode image from {image_url}: {e}")
+
 
     # Groq call using base64-encoded image
     groq_response = groq_client.chat.completions.create(
